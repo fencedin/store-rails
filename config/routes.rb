@@ -3,7 +3,8 @@ Amazan::Application.routes.draw do
   get 'new-admin', to: 'users#new', as: 'newadmin'
   get 'admin', to: 'sessions#new', as: 'admin'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  resources :users
-  resources :sessions
+  resources :users, only: [:new, :create, :edit, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :products
+  resources :product_uploads, only: [:new, :create]
 end

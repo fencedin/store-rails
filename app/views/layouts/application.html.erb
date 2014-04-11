@@ -13,6 +13,7 @@
       <%= link_to "Amazan.com", products_path, class: 'navbar-brand' %>
       <% if current_user %>
         <%= link_to "Log Out", logout_path, class: 'navbar-text pull-right' %>
+        <%= link_to "Upload CSV", new_product_upload_path, class: 'navbar-text pull-right' %>
         <%= link_to "Add New Product", new_product_path, class: 'navbar-text pull-right' %>
       <% end %>
     </div>

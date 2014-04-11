@@ -1,0 +1,10 @@
+<h1>Upload CSV</h1>
+
+<%= form_tag({action: :create}, multipart: true) do %>
+  <div class="form-group">
+    <%= label_tag :csv, "Upload a File" %>
+    <%= file_field_tag :csv %>
+  </div>
+  <%= submit_tag "Submit", :class => "btn btn-success" %>
+
+<% end %>
