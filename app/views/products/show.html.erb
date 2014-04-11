@@ -1,0 +1,15 @@
+<%= content_for(:title, "#{@product.name} | Amazan") %>
+<div class="well">
+  <div class="row">
+    <div class="col-md-4">
+      <h1><%= @product.name %></h1>
+      <%= image_tag @product.picture.url(:medium) %>
+    </div>
+    <div class="col-md-6">
+      <br><br>
+      <p><%= number_to_currency(@product.price) %></p><br>
+      <p><span class="product-heading">Description</span></p>
+      <p><%= simple_format(@product.description) %></p>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_name(params[:name])
     if user && user.authenticate(params[:password])
-      redirect_to products_path, notice: "Logged in!"
+      session[:user_id] = user.id
+      redirect_to products_path(user), notice: "Logged in!"
     else
       flash[:alert] = "Name or password is invalid"
       render "new"

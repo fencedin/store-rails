@@ -1,0 +1,15 @@
+<%= content_for(:title, "Home | Amazan") %>
+<h1>Welcome to Amazan.com</h1>
+
+<div class="well">
+  <% @products.each do |p| %>
+      <p><%= link_to (image_tag p.picture.url(:thumb)), product_path(p) %></p>
+      <p><%= p.name %> | <%= number_to_currency(p.price) %></p>
+      <% if current_user %>
+        <%= link_to "Edit", edit_product_path(p), class: "btn btn-success btn-xs"%> <%= link_to "Delete", product_path(p), data: {confirm: "You sure?",
+                                           method: "delete"},
+                                    class: "btn btn-danger btn-xs" %>
+      <% end %>
+  <% end %>
+</div>
+
