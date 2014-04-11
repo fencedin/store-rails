@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: Amazan_development
+
+test:
+  adapter: postgresql
+  database: Amazan_test
