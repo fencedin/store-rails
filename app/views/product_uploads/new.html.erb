@@ -1,5 +1,7 @@
 <h1>Upload CSV</h1>
 
+<%= render 'layouts/errors', :object => @product %>
+
 <%= form_tag({action: :create}, multipart: true) do %>
   <div class="form-group">
     <%= label_tag :csv, "Upload a File" %>

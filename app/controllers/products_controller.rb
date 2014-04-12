@@ -3,8 +3,9 @@ class ProductsController < ApplicationController
     if params[:search].nil?
       @products = Product.all
     elsif Product.search(params[:search]) == false
-      flash[:alert] = "No matches found!"
+      params[:search] = nil
       @products = Product.all
+      redirect_to '/', alert: "No matches found!"
     else
       @products = Product.search(params[:search])
     end
