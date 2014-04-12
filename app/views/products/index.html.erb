@@ -3,7 +3,9 @@
 
 <div class="well">
   <% @products.each do |p| %>
+    <% if !p.picture_file_name.nil? %>
       <p><%= link_to (image_tag p.picture.url(:thumb)), product_path(p) %></p>
+    <% end %>
       <p><%= p.name %> | <%= number_to_currency(p.price) %></p>
       <% if current_user %>
         <%= link_to "Edit", edit_product_path(p), class: "btn btn-success btn-xs"%> <%= link_to "Delete", product_path(p), data: {confirm: "You sure?",

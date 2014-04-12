@@ -11,6 +11,12 @@
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <%= link_to "Amazan.com", products_path, class: 'navbar-brand' %>
+      <%= form_tag "/search", method: "get", class: 'navbar-form pull-left' do %>
+        <%= label_tag :search, "Search for:" %>
+        <%= text_field_tag :search, params[:search], class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-s' %>
+      <% end %>
+
       <% if current_user %>
         <%= link_to "Log Out", logout_path, class: 'navbar-text pull-right' %>
         <%= link_to "Upload CSV", new_product_upload_path, class: 'navbar-text pull-right' %>

@@ -10,7 +10,8 @@ gem 'bcrypt'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bootstrap-sass'
 gem 'smarter_csv'
-
+gem 'textacular'
+2
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
